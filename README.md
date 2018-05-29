@@ -18,13 +18,18 @@ optional arguments:
 ```
 1. 要一次性搜索多个目标的旁站(利用上面提到的HostsList进行输入)
 2. 要搜索一个目标具有多个 ip, 这些 ip 属于同一个目标, 所以需要聚合在一起
+
 不聚合的时候, 每个目标分开储存; 聚合的时候, 存到一起的时候储存的文件名为 运行时刻
+
 动手试一下就知道了
 ```
 ### 使用举例
 `python ReIPDog.py`: 搜索`HostsList`中的目标, 且不进行聚合.
+
 `python ReIPDog.py`: 搜索`HostsList`中的目标, 且进行聚合.
+
 `python ReIPDog.py -host baidu.com`: 搜索`baidu.com`的旁站, 且输出详细信息
+
 `python ReIPDog.py -host baidu.com --noutput`: 搜索`baidu.com`的旁站, 不输出详细信息
 
 贴个结果吧:

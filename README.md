@@ -1,5 +1,5 @@
 # ReIPDog
-用 Python 写的一个查询旁站的脚本
+用 Python 写的一个查询旁站的脚本, 用了4个 api, 在`./api` 下都可以找到
 
 ## 命令行参数
 ```
@@ -36,5 +36,8 @@ optional arguments:
 
 ![result](https://raw.githubusercontent.com/Macr0phag3/ReIPdog/master/Pic/QQ20180529-174223@2x.png)
 
-## 隐形车
+## 扩展
+如果有自己的 api 也可以加进来, 需要做的就是在主脚本` ReIPdog`调用, 方式参考内置的api, 然后`return`网址结果, 以及加上控制错误的装饰器即可.
+
+## 隐藏福利
 README 中有车, 打卡上车啦

@@ -12,11 +12,12 @@ class ErrorDog:
         def inside(Host, s):
             try:
                 return func(Host, s)
-            except:
-                with open(self.log, 'a') as fp:
-                    fp.write(traceback.format_exc()+'\n'+'-'*50 + '\n')
+            except Exception, e:
+                if 'Keyboard' not in str(e):
+                    with open(self.log, 'a') as fp:
+                        fp.write(traceback.format_exc()+'\n'+'-'*50 + '\n')
 
-                print "[X]"+putColor("The api of %s was broken. Check the log in %s\n" %
-                                     (self.api_name, self.log), 'red')
+                    print "[X]"+putColor("The api of %s was broken. Check the log in %s\n" %
+                                         (self.api_name, self.log), 'red')
                 return []
         return inside

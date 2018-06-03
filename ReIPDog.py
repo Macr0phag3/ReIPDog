@@ -20,7 +20,7 @@ def Saving(name, Sites):
         print '\n[!]Saving result to %s' % putColor(name+'.txt', 'blue')
 
 
-def Anylise(Sites):
+def Analyse(Sites):
     for site in Sites:
         if site.count('.') == 1:
             print '[+]', putColor(site, 'green')
@@ -56,7 +56,6 @@ x------------------------------------------------------------x
 
 x------------------------------------------------------------x
 ''', 'cyan')
-
 print '[*]Searching[%s]' % putColor(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 'yellow')
 starttime = datetime.datetime.now()
 parser = argparse.ArgumentParser(usage='''
@@ -120,7 +119,7 @@ for Host in HostsList:
         print '[*]All Sites(%s)' % putColor(str(len(Sites)), 'cyan')
         Sites.sort()
         if s:
-            Anylise(Sites)
+            Analyse(Sites[:])
         Saving(name, Sites)
         Sites = []
         print '\n[*]Check for Alive'
@@ -132,9 +131,10 @@ if len(Sites) and not z:
     Sites.sort()
     print '[*]All Sites(%s)' % putColor(str(len(Sites)), 'cyan')
     if s:
-        Anylise(Sites[:])
+        Analyse(Sites[:])
     name = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
     Saving(name, Sites)
+
 
 print '[!]Searching Finished'
 if name and not z:

@@ -1,6 +1,10 @@
 # ReIPDog
 用 Python 写的一个查询旁站的脚本, 用了4个 api, 在`./api` 下都可以找到
 
+## 依赖
+`pip install threadpool`
+`pip install termcolor`
+
 ## 命令行参数
 ```
 optional arguments:
